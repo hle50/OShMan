@@ -19,6 +19,7 @@ import {
 // import InformationDetailScence from '../scenes/informations/InformationDetail';
 import LoginScreen from '../screens/Login';
 import ForgotPasswordScreen from '../screens/ForgotPassword';
+import HomeScreen from '../screens/Home';
 
 
 const LoginStack = StackNavigator({
@@ -32,12 +33,12 @@ const LoginStack = StackNavigator({
   headerMode: 'screen'
 });
 
-// const MainStack = StackNavigator({
-//   Home: {
-//     screen: HomeScene
-//   }
-// });
-//
+const HomeStack = StackNavigator({
+  Home: {
+    screen: HomeScreen
+  }
+});
+
 // const MainDrawer = DrawerNavigator({
 //   Home: {
 //     screen: MainStack
@@ -132,6 +133,9 @@ export default RootNavigator = StackNavigator({
   Login: {
     screen: LoginStack
   },
+  Home: {
+    screen: HomeStack
+  }
   // Main: {
   //   screen: MainDrawer
   // },

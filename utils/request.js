@@ -5,6 +5,7 @@
  *
  * @return {object}          The parsed JSON from the request
  */
+import {AsyncStorage} from 'react-native';
 function parseJSON(response) {
   if (response.status === 204 || response.status === 205) {
     return null;
@@ -36,12 +37,12 @@ async function checkStatus(response) {
  *
  * @return {object}           The response data
  */
-export default function request(url, options, isRequiredAuthorization) {
-  const token = 'test';
+export default async function request(url, options) {
+  const token = await AsyncStorage.getItem('token');
   if (!options) {
     options = {};
   }
-  if (isRequiredAuthorization && token) {
+  if (token) {
     options.headers = {
       Authorization: `bearer ${token}`,
       'Content-Type': 'application/json',

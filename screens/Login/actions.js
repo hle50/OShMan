@@ -21,12 +21,23 @@ export const doLogin = (email, password) => async dispatch => {
       body: JSON.stringify(body),
     };
     const data = await request(url, option);
-    dispatch(setUserInfo(data));
+    dispatch(setUserInfo(data.profile));
     return data;
   } catch (error) {
-    console.log(JSON.stringify(error));
-    Alert.alert(error.message)
+    Alert.alert(error.message);
     throw error
   }
 };
 
+export const getProfile = ()=> async dispatch=>{
+  try {
+    const url = `${API.link}/user/getProfile`;
+
+    const data = await request(url);
+    dispatch(setUserInfo(data.profile));
+    return data;
+  } catch (error) {
+    Alert.alert(error.message);
+    throw error
+  }
+}

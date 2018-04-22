@@ -17,6 +17,7 @@ import {MenuProvider} from 'react-native-popup-menu';
 import Languages from './components/I18n/Languages';
 import store from './store/store';
 import AppWithNavigation from "./navigation/AppWithNavigation";
+import Loading from './components/loading';
 
 export default class App extends Component<{}> {
   
@@ -27,6 +28,7 @@ export default class App extends Component<{}> {
         <MenuProvider>
           <View style={styles.container}>
             <Languages />
+            <Loading/>
             <AppWithNavigation />
           </View>
         </MenuProvider>
