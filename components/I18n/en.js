@@ -112,5 +112,9 @@ export default {
   UPDATE: 'Update',
   ARE_YOU_SURE_TO_DELETE_THIS: 'Are you sure to delete this?',
   PASSWORD_RECOVERY: 'Password recovery',
-  SUBMIT: 'Submit'
+  SUBMIT: 'Submit',
+  PRODUCTS: 'Products',
+  ORDERS: 'Orders',
+  SHIPPER: 'Shipper',
+  STATISTIC: 'Statistic',
 }

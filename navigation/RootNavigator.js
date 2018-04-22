@@ -6,7 +6,7 @@ import {
 
 // import WelcomeScene from '../scenes/Welcome';
 // import HomeScene from '../scenes/Home';
-// import SideBar from '../components/sidebar/SideBar';
+import SideBar from '../components/sidebar';
 // import ProfileScene from '../scenes/profile/Profile';
 // import UpdateProfileScene from '../scenes/profile/UpdateProfile';
 // import ChangePasswordScene from '../scenes/profile/ChangePassword';
@@ -39,14 +39,14 @@ const HomeStack = StackNavigator({
   }
 });
 
-// const MainDrawer = DrawerNavigator({
-//   Home: {
-//     screen: MainStack
-//   }
-// }, {
-//   contentComponent: props => <SideBar {...props} />
-// });
-//
+const MainDrawer = DrawerNavigator({
+  Home: {
+    screen: HomeStack
+  }
+}, {
+  contentComponent: props => <SideBar {...props} />
+});
+
 // const ProfileStack = StackNavigator({
 //   Profile: {
 //     screen: ProfileScene
@@ -134,7 +134,7 @@ export default RootNavigator = StackNavigator({
     screen: LoginStack
   },
   Home: {
-    screen: HomeStack
+    screen: MainDrawer
   }
   // Main: {
   //   screen: MainDrawer

@@ -42,7 +42,6 @@ class LoginScreen extends Component {
   
   async submit(data, postSubmit) {
     try {
-      console.log(data,);
       const { email, password } = data;
       const res = await this.props.doLogin(email, password);
       // set token to local storage
